@@ -25,7 +25,7 @@ namespace Lab2._2.Controllers
                 model.first = Request.Form["first"];
                 model.second = Request.Form["second"];
                 model.sign = Request.Form["sign"];
-                model.show = false;
+                model.show = true;
                 model.calculation();
                 ViewBag.dataModel = model;
                 return View("Results");
@@ -43,7 +43,7 @@ namespace Lab2._2.Controllers
             model.first = Request.Form["first"];
             model.second = Request.Form["second"];
             model.sign = Request.Form["sign"];
-            model.show = false;
+            model.show = true;
             model.calculation();
             ViewBag.dataModel = model;
             return View("Results");
@@ -54,7 +54,7 @@ namespace Lab2._2.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult ModelBindingInParametrs(string first, string second, string sign)
+        public IActionResult ModelBindingParametrs(string first, string second, string sign)
         {
             CalcModel model = new CalcModel();
             model.first = Request.Form["first"];
@@ -66,15 +66,15 @@ namespace Lab2._2.Controllers
             return View("Results");
         }
         [HttpGet]
-        public IActionResult ModelBindingInSeparateModel()
+        public IActionResult ModelBindingSeparateModel()
         {
 
             return View();
         }
         [HttpPost]
-        public IActionResult ModelBindingInSeparateModel(CalcModel model)
+        public IActionResult ModelBindingSeparateModel(CalcModel model)
         {
-            model.show = true;
+            model.show = false;
             model.calculation();
             ViewBag.dataModel = model;
             return View("Results");

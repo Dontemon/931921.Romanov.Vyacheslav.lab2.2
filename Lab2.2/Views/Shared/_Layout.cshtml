@@ -10,14 +10,15 @@
 </head>
     <body>
         <header>
-            <a class="nav-brand" asp-area="" asp-controller="Home" asp-action="Index">Backend2</a>
-            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            <a asp-area="" asp-controller="Home" asp-action="Index">Backend2</a>
+            <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
         </header>
 
         <div class="main">
             @RenderBody()
         </div>
 
+        <div class="line"></div>
         <footer>&copy; 2022 - Backend2</footer>
     </body>
 </html>
